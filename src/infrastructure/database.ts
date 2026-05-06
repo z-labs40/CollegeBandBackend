@@ -13,7 +13,7 @@ export const AppDataSource = new DataSource({
   password: process.env.DB_PASSWORD || 'postgres',
   database: process.env.DB_NAME || 'postgres',
   synchronize: true, // Auto-creates tables based on models
-  logging: true,
+  logging: false, // Turned off to hide queries in terminal
   entities: [UserModel, BookingModel],
   ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false,
   subscribers: [],
