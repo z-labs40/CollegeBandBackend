@@ -11,10 +11,11 @@ export const AppDataSource = new DataSource({
   port: parseInt(process.env.DB_PORT || '5432'),
   username: process.env.DB_USER || 'postgres',
   password: process.env.DB_PASSWORD || 'postgres',
-  database: process.env.DB_NAME || 'bandroom_db',
-  synchronize: true, // Set to false in production
-  logging: false,
+  database: process.env.DB_NAME || 'postgres',
+  synchronize: true, // Auto-creates tables based on models
+  logging: true,
   entities: [UserModel, BookingModel],
+  ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false,
   subscribers: [],
   migrations: [],
 });
