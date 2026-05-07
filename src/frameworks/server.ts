@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 8080;
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://collegemusicband--erp-b2b69.us-east4.hosted.app'
+    'https://collegemusicband--erp-b2b69.us-east4.hosted.app/api'
   ],
   credentials: true
 }));
