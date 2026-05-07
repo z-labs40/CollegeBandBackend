@@ -15,7 +15,10 @@ const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin: [
+    'http://localhost:3000',
+    'https://collegemusicband--erp-b2b69.us-east4.hosted.app'
+  ],
   credentials: true
 }));
 app.use(express.json());
